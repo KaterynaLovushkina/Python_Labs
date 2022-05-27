@@ -7,22 +7,22 @@ class Lorry(Car):
                  miles_in_thousands: float, high: float,
                  length: float, width: float):
         Vehicle.__init__(self, model, year, miles_in_thousands)
-        self.__high = high
-        self.__length = length
-        self.__width = width
+        self.high = high
+        self.length = length
+        self.width = width
 
     def __str__(self):
         my_string = super(Car, self).__str__() + ", High={}, Length={}, Width={}". \
-            format(self.__high, self.__length, self.__width)
+            format(self.high, self.length, self.width)
         return my_string
 
     def __repr__(self):
         my_string = super(Car, self).__repr__() + \
-                    f',"{self.__high}","{self.__length}",{self.__width})'
+                    f',"{self.high}","{self.length}",{self.width})'
         return my_string
 
     def get_sum_of_delivered_load(self, distance_per_km: int):
-        volume = self.__width * self.__length * self.__width
+        volume = self.width * self.length * self.width
         if volume < 20:
             sum = distance_per_km * 5
             return sum
@@ -38,5 +38,5 @@ class Lorry(Car):
         else:
             print("we can't deliver the load ")
         
-    def __dell__(self):
-        super(Car,self).__dell__()
+    def __del__(self):
+        super(Car,self).__del__()

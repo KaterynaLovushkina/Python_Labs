@@ -20,9 +20,9 @@ class Car(Vehicle, ABC):
         return my_string
 
     def goForward(self, speed) -> None:
-        print("The car {}  is going with speed {} km per hour".format(self.__model, speed))
+        print(f"The car {self.model}  is going with speed {speed} km per hour")
 
     def get_tanked(self, litres_of_fuel: float,
                    price_per_litre: float) -> None:
         cost = litres_of_fuel * price_per_litre
-        print("The car {}  is tanked for {} UAH".format(self.__model, cost))
+        print(f"The car {self.model}  is tanked for {cost} UAH")
